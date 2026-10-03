@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f3ecdf;
+  --color-ink: #1a1917;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-script-face), "Snell Roundhand", cursive;
+}
+
+:root {
+  /* width of one hanging shirt; the rack and rail are sized from it */
+  --sw: clamp(150px, 17vw, 240px);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: var(--color-ink);
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(rgba(60, 45, 20, 0.13) 1px, transparent 1.2px),
+    radial-gradient(120% 80% at 50% 0%, #faf6ee 0%, #f3ecdf 55%, #ebe2d1 100%);
+  background-size: 18px 18px, 100% 100%;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.chrome-h {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #d4d7dc 22%,
+    #7b8087 48%,
+    #aeb3b9 66%,
+    #f4f5f6 84%,
+    #8b9097 100%
+  );
+}
+
+.chrome-v {
+  background: linear-gradient(
+    90deg,
+    #8b9097 0%,
+    #f4f5f6 18%,
+    #aeb3b9 38%,
+    #7b8087 56%,
+    #d4d7dc 80%,
+    #6f747b 100%
+  );
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 70s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation-duration: 240s;
+  }
+}
